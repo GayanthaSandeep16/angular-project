@@ -1,1 +1,2 @@
-#in my-first-project shows the frontend and node folder show the back end
+#in my-first-project shows the frontend
+# node folder shows the back end
