@@ -1,2 +1,2 @@
-#in my-first-project shows the frontend
+# in frontend-angular shows the frontend
 # node folder shows the back end
