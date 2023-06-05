@@ -1,0 +1,27 @@
+.card {
+  border: none;
+  width: 500px;
+  margin: 0 auto;
+
+  .btn-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+.header {
+  margin: 0 auto;
+  display: block;
+}
+.table-container {
+  margin-top: 100px;
+
+  .table {
+    width: 900px;
+    margin: 0 auto;
+
+    .table-btn {
+      width: 190px;
+    }
+  }
+}

@@ -1,0 +1,122 @@
+<div class="container mt-4">
+  <div class="card">
+    <h1 class="header mb-5">Student Registration</h1>
+
+    <form>
+      <div class="mb-3 form-group">
+        <label class="mb-2">Student Name</label>
+        <input
+          type="text"
+          [(ngModel)]="stname"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control"
+          id="stname "
+        />
+      </div>
+
+      <div class="mb-3 form-group">
+        <label class="mb-2">Birthday</label>
+        <input
+          type="text"
+          [(ngModel)]="birthday"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control"
+          placeholder="yyyy-mm-dd"
+          id="birthday"
+        />
+      </div>
+
+      <div class="mb-3 form-group">
+        <label class="mb-2">Student Email</label>
+        <input
+          type="text"
+          [(ngModel)]="stemail"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control"
+          id="stemail"
+        />
+      </div>
+
+      <div class="mb-3 form-group">
+        <label class="mb-2">Student Mobile</label>
+        <input
+          type="text"
+          [(ngModel)]="stphone"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control"
+          id="stphone"
+        />
+      </div>
+
+      <div class="mb-3 form-group">
+        <label class="mb-2">Student Address</label>
+        <textarea
+          type="text"
+          [(ngModel)]="staddress"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control"
+          rows="4"
+          id="staddress"
+        ></textarea>
+      </div>
+      <div class="btn-row">
+        <button
+          type="submit"
+          class="btn btn-primary px-4 mt-4"
+          (click)="save()"
+        >
+          Save
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary px-4 mt-4"
+          (click)="toggleTable()"
+        >
+          {{ showTable ? "Hide" : "Details" }}
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="container table-container" *ngIf="showTable">
+    <h1 class="text-center mt-5 mb-5 header">Student Table</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="pb-3" scope="col">Student id</th>
+          <th class="pb-3" scope="col">Student Name</th>
+          <th class="pb-3" scope="col">Birthday</th>
+          <th class="pb-3" scope="col">Student Email</th>
+          <th class="pb-3" scope="col">Student Mobile</th>
+          <th class="pb-3" scope="col">Student Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of StudentArray">
+          <td>{{ student.id }}</td>
+          <td>{{ student.stname }}</td>
+          <td>{{ student.birthday }}</td>
+          <td>{{ student.email }}</td>
+          <td>{{ student.phone_no }}</td>
+          <td>{{ student.address }}</td>
+          <td class="table-btn">
+            <button
+              type="button"
+              class="btn mx-4 px-4 btn-success"
+              (click)="setUpdate(student)"
+            >
+              Edit
+            </button>
+            <button
+              type="button"
+              class="btn px-4 btn-danger"
+              (click)="setDelete(student)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
